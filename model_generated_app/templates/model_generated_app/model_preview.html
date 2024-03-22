@@ -1,0 +1,21 @@
+{% extends 'data_upload_app/base.html' %}
+{% block content %}
+    {% load static %}
+        
+        <div class="container" align="center">
+            The graph below shows the relationship between the Actual and Predicted Values.
+            <br>
+            
+            
+            
+
+            <img src= "{{ pltFigURL  }}" />
+            <br>
+            <p> Download the generated model <a href = "{{ mdlDwnldLocation  }}">here </a> </p>
+            <p> Deploy the generated model <a href = "../api/{{ model_id  }}">here </a> </p>
+
+            
+            
+        </div>
+        
+{% endblock %} 

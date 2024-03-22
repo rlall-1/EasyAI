@@ -1,0 +1,34 @@
+{% extends 'data_upload_app/base.html' %}
+{% block content %}
+    {% load static %}
+        
+        <div class="container" align="center">
+            
+            <br>
+            {% if stock_price_fig_URL == '' %}
+                We were unable to lookup this stock symbol on BSE. Are you sure the symbol is correct? You can look up the BSE stock symbol list  
+                <!--<a href="https://www.bseindia.com" target="popup" onclick="window.open('https://www.bseindia.com','popup','width=600, height=600'); return false;">here</a>-->
+                <a href="https://www.bseindia.com" target="_blank">here</a>.
+                <br>
+                Or, you can try <a href="/sentiment_analysis_app/index.html">again</a>.
+                
+            {% else %}
+                <img src= "{{ stock_price_fig_URL  }}"  width='400' height='250' />
+                <br>
+                The graph below shows the Twitter sentiment for this stock
+
+                <br>
+ 
+                <img src= "{{ twitter_sentiment_Fig_URL  }}" width='400' height='250' />
+                <br>
+                
+                
+                Analyze another stock? Click <a href="/sentiment_analysis_app/index.html">here</a>.
+            {% endif %}
+          
+
+            
+            
+        </div>
+        
+{% endblock %} 

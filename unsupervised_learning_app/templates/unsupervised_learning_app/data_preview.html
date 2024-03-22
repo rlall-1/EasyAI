@@ -1,0 +1,25 @@
+{% extends 'data_upload_app/base.html' %}
+{% block content %}
+    {% load static %}
+        <div class="container" align="center">
+            Sample data from your file is shown  below
+            <br>
+            <br>
+            <table border="1">
+                
+               
+                    {% for rowdata in dataset_sample_list%}
+                    <tr>
+                        
+                        {% for celldata in rowdata %}
+                        <td>
+                            {{ celldata }}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                
+                
+            </table>
+        </div>
+{% endblock %} 

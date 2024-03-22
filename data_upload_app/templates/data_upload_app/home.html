@@ -1,0 +1,20 @@
+{% extends 'data_upload_app/base.html' %}
+{% block content %}
+    {% load static %}
+    <div class="container" align="center" >
+        <div class="row justify-content-md-center bg-light">
+            <h1> Welcome to The Data Insights Platform </h1> <br> 
+            <h2> The Paltform is designed for business users to leverage the power of Machine Learning. Here is what you need to do-</h2>
+            <p> For example, you want to predict the price of a house. Take the data that you have and put it in an excel file. Put all the factors that you think are responsible for the price of the house like size, age etc. The last column should contain the price of the house. Save this as a .csv file.
+                Now, upload your file below for generating the model</p>
+            
+            <form method="POST" enctype="multipart/form-data"> 
+                {{ user_file_upload_form.as_p }}
+                {% csrf_token %}
+                <input type="submit" value="Submit" class="btn btn-outline-primary"></input>
+                
+                
+            </form>
+        </div>
+    </div>
+{% endblock %} 

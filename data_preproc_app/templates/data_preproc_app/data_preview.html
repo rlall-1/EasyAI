@@ -1,0 +1,41 @@
+{% extends 'data_upload_app/base.html' %}
+{% block content %}
+    {% load static %}
+        <div class="container" align="center">
+            Sample data from your file is shown  below
+            <br>
+            <br>
+            <table border="1">
+                
+                <tr>
+                    {% for colName in colheaders%}
+                        <th align="center" width=150>
+                            {{ colName }}
+                        </th>
+                    {% endfor %}
+                </tr>
+                {% for rowdata in dataframe %}
+                <tr align="center">
+                    {% for celldata in rowdata %}
+                        <td width=150>
+                            {{ celldata }}
+                        </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+
+            <br>
+            <br>
+            
+            {% autoescape off %}
+                {{dataset_description.to_html}}
+            {% endautoescape %}
+            <form method="POST" enctype="multipart/form-data">
+                {{display_preprocess_form.as_p}}
+                {% csrf_token %}
+                <input type="hidden" value="{{ pk }}" name="FileID"></input>
+                <input type="submit" value="Submit" class="btn btn-outline-primary"></input>
+            </form>
+        </div>
+    {% endblock %} 

@@ -1,0 +1,9 @@
+Project uses cd D:\Rajiv\Projects\Python\DjangoProjects\vEnvmt\vEnvEasyAI\Scripts
+
+activate vEnvEasyAI
+
+vEnvEasyAI Virtual Env is used
+
+Project is at cd D:\Rajiv\Projects\Python\DjangoProjects\EasyAI_project
+
+manage.py runserver
